@@ -13,7 +13,7 @@ jobs:
     - name: Check dir
       run: pwd
     - name: Check dir
-      run: find / -name Dockerfile      
+      run: find / -name PrrofOfAutority     
     - name: Publish Docker image to registry
       uses: swisschain/Publish-Docker-Github-Action@master
       with:
