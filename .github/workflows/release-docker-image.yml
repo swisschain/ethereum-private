@@ -11,7 +11,9 @@ jobs:
 
     steps:
     - name: Check dir
-      run: ls
+      run: pwd
+    - name: Check dir
+      run: ls -la       
     - name: Publish Docker image to registry
       uses: swisschain/Publish-Docker-Github-Action@master
       with:
