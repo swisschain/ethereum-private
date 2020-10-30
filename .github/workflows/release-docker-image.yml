@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Check dir
+      run: ls
     - name: Publish Docker image to registry
       uses: swisschain/Publish-Docker-Github-Action@master
       with:
