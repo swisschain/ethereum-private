@@ -1,0 +1,22 @@
+name: Release Service
+
+on:
+  push:
+    tags: "*"
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Publish Docker image to registry
+      uses: swisschain/Publish-Docker-Github-Action@master
+      with:
+        name: swisschains/parity-poa
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        workdir: ./eth-poa
+        dockerfile: Dockerfile
+        # snapshot: true # use snapshot to push an additional image, which is tagged with {YEAR}{MONTH}{DAY}{HOUR}{MINUTE}{SECOND}{first 6 digits of the git sha}
+        tag_names: true  
